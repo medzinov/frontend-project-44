@@ -6,7 +6,7 @@ import greetAndAskForName from '../src/cli.js';
 const userName = greetAndAskForName();
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-const playGame = () => {
+const playBrainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let correctAnswers = 0;
 
@@ -30,5 +30,5 @@ const playGame = () => {
   }
 };
 
-playGame();
-export default playGame;
+playBrainEven();
+export default playBrainEven;
