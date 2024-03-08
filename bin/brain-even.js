@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-import readlineSync from 'readline-sync';
+import { maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber } from '../src/index.js';
 import greetAndAskForName from '../src/cli.js';
 
 const userName = greetAndAskForName();
@@ -10,22 +10,24 @@ const playBrainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let correctAnswers = 0;
 
-  for (let i = 0; i < 3; i += 1) {
-    const randomNum = Math.floor(Math.random() * 100);
-    const userAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
-
+  for (let i = 0; i < maxAttempts; i += 1) {
+    const randomNum = generateRandomNumber(1, 100);
+    askQuestion(`Question: ${randomNum}`)
+    const userAnswer = getUserAnswer();
     const correctAnswer = isEven(randomNum);
 
-    if (userAnswer.toLowerCase() === correctAnswer) {
+    if (checkAnswer(userAnswer, correctAnswer)) {
       console.log('Correct!');
       correctAnswers += 1;
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
+      console.log(
+        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`,
+      );
       return;
     }
   }
 
-  if (correctAnswers === 3) {
+  if (correctAnswers === maxAttempts) {
     console.log(`Congratulations! ${userName}`);
   }
 };

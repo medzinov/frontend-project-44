@@ -39,7 +39,9 @@ const playBrainCalc = () => {
       console.log('Correct!');
       correctAnswers += 1;
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctResult}`);
+      console.log(
+        `${userAnswer} is wrong answer ;(. Correct answer was ${correctResult}`,
+      );
     }
   }
   if (correctAnswers === 3) {
