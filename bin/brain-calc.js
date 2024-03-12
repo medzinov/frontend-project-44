@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-import readlineSync from 'readline-sync';
+import {
+  maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber,
+} from '../src/index.js';
 import greetAndAskForName from '../src/cli.js';
 
 const calculateResult = (num1, operator, num2) => {
@@ -22,20 +24,18 @@ const playBrainCalc = () => {
 
   let correctAnswers = 0;
 
-  for (let i = 0; i < 3; i += 1) {
-    const num1 = Math.floor(Math.random() * 100);
-    const num2 = Math.floor(Math.random() * 100);
+  for (let i = 0; i < maxAttempts; i += 1) {
+    const num1 = generateRandomNumber(1, 10);
+    const num2 = generateRandomNumber(1, 10)
     const operators = ['+', '-', '*'];
-    const operator = operators[Math.floor(Math.random() * operators.length)];
+    const operator = operators[generateRandomNumber(0, operators.length - 1)];
 
-    const expression = `${num1} ${operator} ${num2}`;
-    const correctResult = calculateResult(num1, operator, num2);
+    askQuestion(`Question: ${num1} ${operator} ${num2}`)
+    const correctAnswer = calculateResult(num1, operator, num2);
 
-    console.log(`Question: ${expression}`);
+    const userAnswer = getUserAnswer()
 
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (Number(userAnswer) === correctResult) {
+    if (checkAnswer(userAnswer, correctAnswer)) {
       console.log('Correct!');
       correctAnswers += 1;
     } else {

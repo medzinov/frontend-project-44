@@ -14,7 +14,7 @@ const askQuestion = (question) => {
   };
 
   const checkAnswer = (userAnswer, correctAnswer) => {
-    return userAnswer.toLowerCase() === correctAnswer.toLowerCase();
+    return userAnswer === correctAnswer;
   };
 
   const generateRandomNumber = (min, max) => {

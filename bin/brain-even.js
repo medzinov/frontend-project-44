@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-import { maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber } from '../src/index.js';
+import {
+  maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber,
+} from '../src/index.js';
 import greetAndAskForName from '../src/cli.js';
 
 const userName = greetAndAskForName();
@@ -12,7 +14,7 @@ const playBrainEven = () => {
 
   for (let i = 0; i < maxAttempts; i += 1) {
     const randomNum = generateRandomNumber(1, 100);
-    askQuestion(`Question: ${randomNum}`)
+    askQuestion(`Question: ${randomNum}`);
     const userAnswer = getUserAnswer();
     const correctAnswer = isEven(randomNum);
 
