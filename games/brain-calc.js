@@ -21,7 +21,7 @@ const calculateResult = (num1, operator, num2) => {
 userName
 const playBrainCalc = () => {
   console.log('What is the result of the expression?');
-  let correctAnswers = 0
+    let correctAnswers = 0
     for (let i = 1; i <= maxAttempts; i += 1) {
       const num1 = generateRandomNumber(1, 10);
       const num2 = generateRandomNumber(1, 10);
@@ -33,18 +33,17 @@ const playBrainCalc = () => {
   
       askQuestion(question)
       const userAnswer = getUserAnswer();
-  
-      if (checkAnswer(userAnswer, correctAnswer)) {
-        correctAnswers += 1;
-      } else {
-        console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-        return;
+
+      if(!checkAnswer(userAnswer, correctAnswer)){
+        return
+      }else{
+        correctAnswers +=1
+      }
+      if (correctAnswers === maxAttempts) {
+        console.log(`Congratulations! ${userName}`);
       }
     }
-  
-    if (correctAnswers === maxAttempts) {
-      console.log(`Congratulations! ${userName}`);
-    }
+
   };
 playBrainCalc();
 export default playBrainCalc;

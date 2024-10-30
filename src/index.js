@@ -18,9 +18,9 @@ const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min
 const checkAnswer = (userAnswer, correctAnswer) => {
   if (userAnswer.toString() === correctAnswer.toString()) {
     console.log('Correct!');
-    return true;
+    return true
   } else {
-    console.log('Wrong');
+    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
     return false; 
   }
 };

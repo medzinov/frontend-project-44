@@ -27,16 +27,14 @@ userName
     askQuestion(question)
     const userAnswer = getUserAnswer()
 
-    if (checkAnswer(userAnswer, correctAnswer)) {
-      correctAnswers += 1;
-    } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      return;
+    if(!checkAnswer(userAnswer, correctAnswer)){
+      return
+    }else{
+      correctAnswers +=1
     }
-  }
-
-  if (correctAnswers === maxAttempts) {
-    console.log(`Congratulations! ${userName}`);
+    if (correctAnswers === maxAttempts) {
+      console.log(`Congratulations! ${userName}`);
+    }
   }
 };
 
