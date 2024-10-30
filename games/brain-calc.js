@@ -18,7 +18,7 @@ const calculateResult = (num1, operator, num2) => {
   }
 };
 
-userName
+
 const playBrainCalc = () => {
   console.log('What is the result of the expression?');
     let correctAnswers = 0

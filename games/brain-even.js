@@ -7,7 +7,6 @@ import {
 ;
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-userName
 const playBrainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let correctAnswers = 0;

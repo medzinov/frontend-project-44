@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
 import {
-    maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber,
-    userName,
-  } from '../src/index.js';
+  maxAttempts, getUserAnswer, checkAnswer, generateRandomNumber, userName,
+  askQuestion,
+} from '../src/index.js';
 
-userName
-  const gcd = (a, b)=> {
-    if (!b) {
-      return a;
-    }
-  
-    return gcd(b, a % b);
+
+
+const gcd = (a, b)=> {
+  if (!b) {
+    return a;
   }
+
+  return gcd(b, a % b);
+}
 
   const playBrainGcd =()=> {
     console.log('Find the greatest common divisor of given numbers.')
@@ -39,3 +40,5 @@ userName
 };
 
   playBrainGcd()
+
+  export default playBrainGcd
