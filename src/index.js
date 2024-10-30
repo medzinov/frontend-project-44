@@ -2,19 +2,29 @@
 /* eslint-disable no-console */
 
 import readlineSync from 'readline-sync';
+import greetAndAskForName from '../src/cli.js';
 
-let maxAttempts = 3;
+const userName = greetAndAskForName()
+const maxAttempts = 3;
 
 const askQuestion = (question) => {
-  console.log(question);
+  console.log(`Question: ${question}`);
 };
 
 const getUserAnswer = () => readlineSync.question('Your answer: ');
 
-const checkAnswer = (userAnswer, correctAnswer) => userAnswer.toString() === correctAnswer.toString();
-
 const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+const checkAnswer = (userAnswer, correctAnswer) => {
+  if (userAnswer.toString() === correctAnswer.toString()) {
+    console.log('Correct!');
+    return true;
+  } else {
+    console.log('Wrong');
+    return false; 
+  }
+};
+
 export {
-  maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber,
+  maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber, userName
 };
