@@ -26,22 +26,22 @@ const playBrainCalc = () => {
 
   for (let i = 0; i < maxAttempts; i += 1) {
     const num1 = generateRandomNumber(1, 10);
-    const num2 = generateRandomNumber(1, 10)
+    const num2 = generateRandomNumber(1, 10);
     const operators = ['+', '-', '*'];
     const operator = operators[generateRandomNumber(0, operators.length - 1)];
 
-    askQuestion(`Question: ${num1} ${operator} ${num2}`)
+    askQuestion(`Question: ${num1} ${operator} ${num2}`);
     const correctAnswer = calculateResult(num1, operator, num2);
-
-    const userAnswer = getUserAnswer()
+    const userAnswer = getUserAnswer();
 
     if (checkAnswer(userAnswer, correctAnswer)) {
       console.log('Correct!');
       correctAnswers += 1;
     } else {
       console.log(
-        `${userAnswer} is wrong answer ;(. Correct answer was ${correctResult}`,
+        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}\nLet's try again ${userName}`,
       );
+      return;
     }
   }
   if (correctAnswers === 3) {

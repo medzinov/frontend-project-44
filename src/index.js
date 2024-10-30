@@ -1,25 +1,20 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
 
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
-const maxAttempts = 3
+let maxAttempts = 3;
 
 const askQuestion = (question) => {
-    console.log(question);
-  };
+  console.log(question);
+};
 
-  const getUserAnswer = () => {
-    return readlineSync.question("Your answer: ");
-  };
+const getUserAnswer = () => readlineSync.question('Your answer: ');
 
-  const checkAnswer = (userAnswer, correctAnswer) => {
-    return userAnswer === correctAnswer;
-  };
+const checkAnswer = (userAnswer, correctAnswer) => userAnswer.toString() === correctAnswer.toString();
 
-  const generateRandomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min +1)) + min;
-  }
+const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export {maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber}
-
+export {
+  maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber,
+};
