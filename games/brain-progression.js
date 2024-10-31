@@ -5,7 +5,6 @@ import {
     askQuestion,
   } from '../src/index.js';
 
-
   
 const generateProgression = (start, step, length = 10)=> {
     const progression = [];
@@ -21,7 +20,7 @@ const playProgression = () => {
 
 for(let i = 1; i <= maxAttempts; i += 1){
     const start = generateRandomNumber(2,9)
-    const step = generateRandomNumber(1,9)
+    const step = generateRandomNumber(2,9)
     const progression = generateProgression(start, step, generateRandomNumber(5, 15))
     const unknown = generateRandomNumber(1, progression.length -1)
     const correctAnswer = progression[unknown]

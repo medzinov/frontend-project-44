@@ -1,19 +1,22 @@
 ### Brain Even game:
 
-[![asciicast](https://asciinema.org/a/686510.svg)](https://asciinema.org/a/686510)
+[![asciicast](https://asciinema.org/a/686656.svg)](https://asciinema.org/a/686656)
 
 ### Brain Calc game:
 
-[![asciicast](https://asciinema.org/a/686515.svg)](https://asciinema.org/a/686515)
-
+[![asciicast](https://asciinema.org/a/686657.svg)](https://asciinema.org/a/686657)
 
 ### Brain GCD game
 
-[![asciicast](https://asciinema.org/a/686528.svg)](https://asciinema.org/a/686528)
+[![asciicast](https://asciinema.org/a/686658.svg)](https://asciinema.org/a/686658)
 
 ### Brain Progression game
 
-[![asciicast](https://asciinema.org/a/686566.svg)](https://asciinema.org/a/686566)
+[![asciicast](https://asciinema.org/a/686660.svg)](https://asciinema.org/a/686660)
+
+### Brain Prime game
+
+[![asciicast](https://asciinema.org/a/686661.svg)](https://asciinema.org/a/686661)
 
 ### Hexlet tests and linter status:
 
