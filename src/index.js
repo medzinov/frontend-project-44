@@ -1,30 +1,35 @@
-#!/usr/bin/env node
-/* eslint-disable no-console */
+
 
 import readlineSync from 'readline-sync';
-import greetAndAskForName from '../src/cli.js';
 
-const userName = greetAndAskForName()
-const maxAttempts = 3;
+const roundsCount = 3;
 
-const askQuestion = (question) => {
-  console.log(`Question: ${question}`);
-};
+const runGame = (description, generateRound) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? '); // Дублируем запрос имени
+  console.log(`Hello, ${userName}!`);
+  
+  console.log(description);
 
-const getUserAnswer = () => readlineSync.question('Your answer: ');
+  for (let i = 0; i < roundsCount; i += 1) {
+    const roundData = generateRound();
+    const question = roundData[0];
+    const correctAnswer = roundData[1];
 
-const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-const checkAnswer = (userAnswer, correctAnswer) => {
-  if (userAnswer.toString() === correctAnswer.toString()) {
-    console.log('Correct!');
-    return true
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false; 
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`); 
+      console.log(`Let's try again, ${userName}!`);
+      return false;
+    }
   }
+
+  console.log(`\nCongratulations, ${userName}!`);
+  return true; 
 };
 
-export {
-  maxAttempts, askQuestion, getUserAnswer, checkAnswer, generateRandomNumber, userName
-};
+export default runGame;
