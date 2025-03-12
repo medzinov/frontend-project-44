@@ -12,7 +12,6 @@ const generateProgression = (start, step, length = 10) => {
   return progression;
 };
 
-
 const generateRound = () => {
   const start = generateRandomNumber(2, 9);
   const step = generateRandomNumber(2, 9);

@@ -2,7 +2,7 @@
 import runGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no.";
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 

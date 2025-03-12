@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
 
 import readlineSync from 'readline-sync';
+import greetAndAskForName from './cli.js';
 
 const roundsCount = 3;
 
 const runGame = (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? '); // Дублируем запрос имени
+  const userName = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${userName}!`);
 
   console.log(description);
@@ -28,7 +29,7 @@ const runGame = (description, generateRound) => {
     }
   }
 
-  console.log(`\nCongratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
   return true;
 };
 
