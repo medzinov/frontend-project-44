@@ -1,6 +1,6 @@
-#!/usr/bin/env node
 /* eslint-disable no-console */
 import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const gameDescription = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
@@ -12,7 +12,7 @@ const isPrime = (num) => {
 };
 
 const generateRound = () => {
-  const randomNum = Math.floor(Math.random() * (20 - 1) + 1);
+  const randomNum = generateRandomNumber(1, 20);
   const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
   const roundData = [randomNum, correctAnswer];
   return roundData;

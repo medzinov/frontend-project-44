@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
@@ -11,7 +12,6 @@ const generateProgression = (start, step, length = 10) => {
   return progression;
 };
 
-const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const generateRound = () => {
   const start = generateRandomNumber(2, 9);

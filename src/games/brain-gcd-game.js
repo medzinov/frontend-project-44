@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import runGame from '../index.js';
-
+import generateRandomNumber from '../utils.js';
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (a, b) => {
@@ -9,7 +9,6 @@ const gcd = (a, b) => {
   }
   return gcd(b, a % b);
 };
-const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const generateRound = () => {
   const num1 = generateRandomNumber(1, 10);

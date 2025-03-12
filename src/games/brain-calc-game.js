@@ -1,6 +1,6 @@
-#!/usr/bin/env node
 /* eslint-disable no-console */
 import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
 
@@ -16,8 +16,6 @@ const calculateResult = (num1, operator, num2) => {
       return 'Error';
   }
 };
-
-const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const generateRound = () => {
   const num1 = generateRandomNumber(1, 10);
