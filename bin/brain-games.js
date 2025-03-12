@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
-import greetAndAskForName from '../src/cli';
+import greetAndAskForName from '../src/cli.js';
 
 greetAndAskForName();

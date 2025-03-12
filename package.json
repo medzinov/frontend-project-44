@@ -5,25 +5,27 @@
   "description": "[![Actions Status](https://github.com/medzinov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/medzinov/frontend-project-44/actions)",
   "main": "index.js",
   "bin": {
-    "brain-games": "games/brain-games.js",
-    "brain-even": "games/brain-even.js",
-    "brain-calc": "games/brain-calc.js",
-    "brain-gcd": "games/brain-gcd.js",
-    "brain-progression": "games/brain-progression.js",
-    "brain-prime": "games/brain-prime.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "globals": "^15.11.0",
-    "prettier": "^3.2.5",
-    "readline-sync": "^1.4.10"
-  }
+"dependencies": {
+  "readline-sync": "^1.4.10"
+},
+"devDependencies": {
+  "@eslint/js": "^9.13.0",
+  "eslint": "^8.57.1",
+  "eslint-config-airbnb-base": "^15.0.0",
+  "eslint-plugin-import": "^2.29.1",
+  "globals": "^15.11.0",
+  "prettier": "^3.2.5"
+}
 }
