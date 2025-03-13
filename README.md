@@ -50,6 +50,3 @@ brain-prime       (To launch the Brain Prime game)
 ### Brain Prime game
 
 [![asciicast](https://asciinema.org/a/686661.svg)](https://asciinema.org/a/686661)
-
-### Hexlet tests and linter status:
-
